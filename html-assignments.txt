@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Welcome to html-assignments</title>
+<title>Welcome to html-assignments modified</title>
 </head>
 <body>
 <h1>Welcome To Exam Hall</h1>
