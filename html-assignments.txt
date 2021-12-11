@@ -1,0 +1,8 @@
+<html>
+<head>
+<title>Welcome to a page</title>
+</head>
+<body>
+<h1>Welcome To Exam Hall</h1>
+</body>
+</html>
