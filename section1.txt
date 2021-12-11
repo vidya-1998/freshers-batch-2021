@@ -1,0 +1,141 @@
+idya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ touch index.html
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ touch info.txt
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git ignore C:\Users\svidya1\project_dir
+git: 'ignore' is not a git command. See 'git --help'.
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ touch .git ignore
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git add index.html
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git commit -m "first version of hello world"
+[master 0a2bd0e] first version of hello world
+ Committer: Vidya <s.vidya@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 8 insertions(+)
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git log
+commit 0a2bd0e8109bf3b6aff06ddfb62426f3f58e6178 (HEAD -> master)
+Author: Vidya <s.vidya@capgemini.com>
+Date:   Sat Dec 11 16:37:56 2021 +0530
+
+    first version of hello world
+
+commit 52a464d8f5f25403646f20591301bdb13042d42b
+Author: Vidya <s.vidya@capgemini.com>
+Date:   Sat Dec 11 16:10:03 2021 +0530
+
+    first version of index.html
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git restore
+fatal: you must specify path(s) to restore
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git restore C:\Users\svidya1\project_dir
+fatal: C:Userssvidya1project_dir: 'C:Userssvidya1project_dir' is outside repository at 'C:/Users/svidya1/project_dir'
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git add index.html
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$ git restore C:\Users\svidya1\project_dir
+fatal: C:Userssvidya1project_dir: 'C:Userssvidya1project_dir' is outside repository at 'C:/Users/svidya1/project_dir'
+
+svidya1@LIN33005349 MINGW64 ~/project_dir (master)
+$
