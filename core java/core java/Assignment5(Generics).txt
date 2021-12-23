@@ -1,0 +1,85 @@
+1.
+
+package genecoll;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class employee {
+
+	public static void main(String[] args) {
+		 Set<Integer> integerSet = new HashSet<Integer>();
+		  
+	      int salary = 50000;
+		integerSet.add(Integer.valueOf(salary));
+	      int id = 6031;
+		integerSet.add(Integer.valueOf(id));
+
+	      Set<String> stringSet = new HashSet<String>();
+	        String department = "Finance";
+	      stringSet.add("Department");
+	        String name = "thomas";
+	      stringSet.add("Name");
+for(Integer data: integerSet) {
+	         System.out.printf("Integer Value :%d\n", data);
+	      }
+
+	      Iterator<String> stringIterator = stringSet.iterator();
+
+	      while(stringIterator.hasNext()) {
+	         System.out.printf("String Value :%s\n", stringIterator.next());
+	      }
+
+
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+2.
+
+package generics;
+
+public class keys {
+	public static void main(String[] args) {
+	HashMap<Double, Integer> map = new HashMap<>();
+	 
+    // Adding elements to the Map
+    // using standard add() method
+    map.put(10.5, 10);
+    map.put(17.5, 30);
+    map.put(19.6, 20);
+    map.put(5.7, 5);
+    map.put(1.5, 50);
+    map.put(1.6, 100);
+    map.put(0.5, 85);
+    map.put(7.5, 3);
+    map.put(9.6, 2);
+    map.put(3.5, 1);
+    // Print size and content of the Map
+    System.out.println("Size of map is:- "
+                       + map.size());
+
+    // Printing elements in object of Map
+    System.out.println(map);
+			
+		}
+}
+---------------------------------------------------------------------------------------------------------	 
+3.
+
+package generics;
+
+public class swap {
+	public <T> swap(T[] a, int i, int j) {
+        T temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+}
+
+

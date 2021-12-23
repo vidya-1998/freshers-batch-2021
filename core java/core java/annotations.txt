@@ -1,0 +1,50 @@
+                                                            **ANNOTATIONS**
+-----------------------------------------------------------------------------------------------------------------------------
+1.package collec;
+import java.lang.annotation.*;  
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD)  
+@interface Test{
+	int marks();
+} 
+class test{
+@Test(marks=95)
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+2.)//building an annotation//
+
+package collec;
+import java.lang.annotation.*;  
+import java.lang.annotation.Target;
+
+@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})   
+@interface info{
+	long Authorid();
+	String Authorname();
+	String Supervisor();
+	int date();
+	int time();
+	int version();
+	String Description();
+} 
+@info( Authorid = 5377,Authorname = "Ram",Supervisor = "Sita", date= 22-12-2021,time= 4 , version=5)
+	class employee
+	{
+		long Authorid;
+		String Authorname;
+		int date;
+		int time;
+	}
+	public class AnnotationDemo
+	{
+		public static void main(String[] args)
+		{
+			employee emp = new employee(Authorid = 5377,Authorname = "Ram",Supervisor = "Sita", date= 22-12-2021,time= 4 , version=5);
+             System.out.println(emp);
+		}
+	}
+
+3.

@@ -1,0 +1,282 @@
+                                                                              ASSIGNMENT-1
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+1)// given number is armstrong are not//
+
+
+public class armstrognum {
+
+	public static void main(String[] args) {
+		int number = 153, originalNumber, remainder, result = 0;
+
+        originalNumber = number;
+
+        while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+
+        if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number");
+
+	}
+
+}
+--------------------------------------------------------------------------------------
+
+2)//find out all the armstrong numbers falling in range of 100-999//
+
+
+
+package armstrongnum;
+   import java.util.Scanner;  
+   import java.lang.Math;
+   public class armstrong {
+		static boolean isArmstrong(int n)   
+		{   
+		int temp, digits=0, last=0, sum=0;   
+		temp=n;    
+		while(temp>0)    
+		{   
+		temp = temp/10;   
+		digits++;   
+		}   
+		temp = n;   
+		while(temp>0)   
+		{        
+		last = temp % 10;    
+		sum +=  (Math.pow(last, digits));     
+		temp = temp/10;   
+		}  
+		if(n==sum)   
+		return true;       
+		else return false;   
+		}   
+		public static void main(String args[])     
+		{     
+		int num;   
+		Scanner sc= new Scanner(System.in);  
+		System.out.print("Enter the limit: ");  
+		num=sc.nextInt();  
+		System.out.println("Armstrong Number up to "+ num + " are: ");  
+		for(int i=0; i<=num; i++)  
+		if(isArmstrong(i))  
+		System.out.print(i+ ", ");  
+		}   
+
+	}
+----------------------------------------------------------------------------------------------------
+
+3)// find out the simple as well as the compound interest of supplied value//
+
+
+
+public class compoundinterest {
+
+	        public void calculate(int p, int t, double r, int n) {
+	        double amount = p * Math.pow(1 + (r / n), n * t);
+	        double cinterest = amount - p;
+	        System.out.println("Compound Interest after " + t + " years: "+cinterest);
+	        System.out.println("Amount after " + t + " years: "+amount);
+	    }
+	    public static void main(String args[]) {
+	    	compoundinterest obj = new compoundinterest();
+	    	obj.calculate(2000, 5, .08, 12);
+	    }
+	}
+----------------------------------------------------------------------------------------------------
+
+4)//supply marks of three subjects and declare the result//
+(if all subject marks greater than 60 declare pass)
+
+
+
+package passmarks;
+import java.util.*;
+public class passmarks {
+	   
+	public static void main(String args[])
+
+	{
+
+	Scanner sc=new Scanner(System.in);
+
+	double a, b, c, p;
+
+	System.out.println("Enter your marks in three subjects...");
+
+	a=sc.nextDouble();
+
+	b=sc.nextDouble();
+
+	c=sc.nextDouble();
+
+	p=a+b+c;
+	
+	System.out.println("Total Marks you scored: "+p);
+
+	p=p/3.0;
+
+	System.out.println("Average marks scored: "+p);
+
+	if(p>60)
+
+	System.out.println("You passed the exam.");
+	
+	if((a>60)&(b>60))
+
+	System.out.println("You have promoted.");
+	
+	if((a>60||b>60||c>60)||(p<60))
+
+		System.out.println("you are failed");
+	}
+
+	}
+
+------------------------------------------------------------------------------------------------------------
+5)// income tax//
+
+
+package corejava;
+
+import java.util.Scanner;
+
+public class income {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double tax=0,it;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter income ");
+		it=sc.nextDouble();
+		if(it<=180000)
+			tax=0;
+		else if(it<=300000)
+			tax=0.1*(it-200000);
+		else if(it<=500000)
+			tax=(0.2*(it-300000))+(0.1*100000);
+		else if(it<=1000000)
+			tax=(0.3*(it-500000))+(0.2*200000)+(0.1*100000);
+		else
+			tax=(0.4*(it-1000000))+(0.3*500000)+(0.2*200000)+(0.1*100000);
+		System.out.println("Income tax amount is "+tax);
+	}
+
+}
+
+----------------------------------------------------------------------------------------------------------------
+6)//cui based application//
+
+
+Scanner sc = new Scanner(System.in);
+        String sp=" ";
+        System.out.println("Enter the Username");
+        String uname = sc.nextLine();
+        if((uname.contains(sp)) || uname.length()<4){
+            System.out.println("Invalid Username");
+            return;
+        }
+
+        System.out.println("Enter the Password");
+        String upass = sc.nextLine();
+        if((upass.contains(sp)) || upass.length()<8){
+            System.out.println("Invalid Password");
+            return;
+        }
+
+        System.out.println(uname+" welcome");
+
+        System.out.println("Enter the Username");
+        String lname = sc.nextLine();
+        System.out.println("Enter the Password");
+        String lpass = sc.nextLine();
+
+        if(uname.equals(lname) && upass.equals(lpass)){
+            System.out.println("contact admin");
+        }
+        else{
+            System.out.println("Username or password Mismatch");
+        }
+
+-------------------------------------------------------------------------------------------------------------
+7)//arrays//
+
+
+package corejava;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class list {
+
+	public static void main(String[] args) {
+		// TODO // creating an Empty Integer List
+        List<Integer> arr = new ArrayList<Integer>(4);
+        // using add() to initialize values
+        // [1, 2, 3, 4]
+        arr.add(5);
+        arr.add(12);
+        arr.add(14);
+        arr.add(6);
+        arr.add(78);
+        arr.add(19);
+        arr.add(1);
+        arr.add(23);
+        arr.add(26);
+        arr.add(35);
+        arr.add(37);
+        arr.add(7);
+        arr.add(52);
+        arr.add(86);
+        arr.add(47);
+        // use contains() to check if the element
+        // 2 exits or not
+        boolean ans = arr.contains(19);
+  
+        if (ans)
+            System.out.println("The list contains 19");
+        else
+            System.out.println("The list does not contains 19");
+
+	}
+
+}
+------------------------------------------------------------------------------------------------------------------
+8)// avearge marks//
+
+package passmarks;
+import java.util.*;
+public class passmarks {
+	   
+	public static void main(String args[])
+
+	{
+
+	Scanner sc=new Scanner(System.in);
+
+	double a, b, c, p;
+
+	System.out.println("Enter your marks in three subjects...");
+
+	a=sc.nextDouble();
+
+	b=sc.nextDouble();
+
+	c=sc.nextDouble();
+
+	p=a+b+c;
+	
+	System.out.println("Total Marks you scored: "+p);
+
+	p=p/3.0;
+
+	System.out.println("Average marks scored: "+p);
+     }
+}
+---------------------------------------------------------------------------------------------------------------------
+

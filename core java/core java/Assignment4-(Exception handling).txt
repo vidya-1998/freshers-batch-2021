@@ -1,0 +1,70 @@
+  1. //arthmetic exception//
+
+try{  
+      //code that may raise exception  
+      int data=100/0;  
+   }catch(ArithmeticException e){System.out.println(e);}  
+   //rest code of the program   
+   System.out.println("rest of the code..."); 
+-------------------------------------------------------------------------------------------------
+3.(a)
+
+
+package exceptionhandling;
+
+public class handling {
+
+	public static void main(String[] args) {
+		 try  
+	        {  
+	        long id = 6031;
+	        double balance =2000;
+	        double withdraw = 2100;
+	        double deposit = 0;
+	        double amount = balance+deposit;
+	        if(withdraw> amount)
+	         throw new Exception("error");
+	        //may throw exception   
+	        }  
+	            //handling the exception  
+		 catch (Exception e) {
+
+	           System.out.println("Error- withdrawal amount exceeds balance");
+
+	        }
+
+
+	}
+
+}
+----------------------------------------------
+(b)
+
+package exceptionhandling;
+
+public class handling {
+
+	public static void main(String[] args) {
+		 try  
+	        {  
+	        long id = 6031;
+	        double balance =2000;
+	        double withdraw = -1000;
+	        double deposit = 0;
+	        double amount = balance+deposit;
+	        if(withdraw!=amount)
+	         throw new Exception("error");
+	        //may throw exception   
+	        }  
+	            //handling the exception  
+		 catch (Exception e) {
+
+	           System.out.println("Error- raise illegal bank transaction exception");
+
+	        }
+
+
+	}
+
+}
+

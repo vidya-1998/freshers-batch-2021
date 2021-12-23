@@ -1,0 +1,203 @@
+                                                                        ASSIGNMENT-3
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+1)//hello world using string//
+
+public class length {
+ 
+    public static void main(String[] args) {
+         
+        String str1 = "hello world";
+
+        int count1 = str1.length()
+
+        System.out.println("The First String has " + count1 + " characters");
+ 
+    }
+ 
+}
+----------------------------------------------------------------------------------------------
+2)//joining strings//
+
+
+package concatstrng;
+
+public class concatstrng {
+
+    public static void main(String[] args) {
+
+        String str1 = "Hello";
+     
+        String str2 = "How are you";
+        
+        String s = String.format("%s%s",str1,str2); 
+
+        System.out.println(s.toString());;
+   }
+ 
+}
+-----------------------------------------------------------------------------------------------
+3)//printing string//
+
+public class StringPool  
+ {  
+public static void main(String[] args)   
+   {  
+String s1 = "Java string refers to the collection of strings which are stored in heap memory"; 
+
+System.out.println(s1);
+   }
+} 
+
+--------------------------------------
+a)//string to lowercase//   
+
+
+    package stringpool;
+
+        public class stringpool {
+	
+	public static void main(String[] args)   
+	   {  
+	String s1 = "Java string refers to the collection of strings which are stored in heap memory"; 
+	
+	var res = s1.toLowerCase();
+	
+	System.out.println(res);
+
+	}
+
+}
+-------------------------------------
+b)//string to uppercase//
+
+
+ package stringpool;
+
+        public class stringpool {
+	
+	public static void main(String[] args)   
+	   {  
+	String s1 = "Java string refers to the collection of strings which are stored in heap memory"; 
+	
+	var res = s1.toUpperCase();
+	
+	System.out.println(res);
+
+	}
+}
+-----------------------------------------
+c)//Replace a character to sign//
+
+   
+public class Replace
+    {
+      public static void main(String args[])
+        {
+      String s1="Java string refers to the collection of strings which are stored in heap memory";
+      String replaceString=s1.replace('a','$');
+      System.out.println(replaceString);
+        }
+}
+-------------------------------------------
+d)//contains collection string//
+
+
+public class String
+ {
+    public static void main(String[] args) 
+     {
+        String str= "Java string refers to the collection of strings which are stored in heap memory";
+        System.out.println("Contains sequence 'collection': " + str.contains("collection"));
+    }
+}
+--------------------------------------------
+e)//matching with thw givwn string//
+
+public class match 
+{
+
+   public static void main(String args[]) 
+   {
+      String Str1 = new String("Java string refers to the collection of strings which are stored in heap memory");
+      String Str2 = Str1;
+      String Str3 = new String("Java string refers to the collection of strings which are stored in heap memory");
+      boolean retVal;
+      retVal = Str1.equals( Str2 );
+      System.out.println("Returned Value = " + retVal );
+      retVal = Str1.equals( Str3 );
+      System.out.println("Returned Value = " + retVal );
+   }
+}
+----------------------------------------------------
+f)// string buffer //
+
+package corejava;
+
+import java.nio.ShortBuffer;
+
+public class buffer {
+
+	public static void main(String[] args) {
+		
+    StringBuffer sb=new StringBuffer("stringbuffer");
+    sb.append(" is a peer class of string");
+    System.out.println(sb);
+    StringBuffer sb1=new StringBuffer(sb);
+    sb1.append("that provides much of");
+    System.out.println(sb1);
+    StringBuffer sb2 = new StringBuffer(sb1);
+    sb2.append("functionality of strings");
+    System.out.println(sb2);	
+
+	}
+
+	private static ShortBuffer newStringbuffer(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+(f) // string buffer //
+package corejava;
+
+import java.nio.ShortBuffer;
+
+public class buffer {
+
+	public static void main(String[] args) {
+		
+    StringBuffer sb=new StringBuffer("stringbuffer");
+    sb.append(" is a peer class of string");
+    System.out.println(sb);
+    StringBuffer sb1=new StringBuffer(sb);
+    sb1.append("that provides much of");
+    System.out.println(sb1);
+    StringBuffer sb2 = new StringBuffer(sb1);
+    sb2.append("functionality of strings");
+    System.out.println(sb2);	
+
+	}
+
+	private static ShortBuffer newStringbuffer(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+// reverse the following string//
+package corejava;
+
+public class reversestring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StringBuffer sb= new StringBuffer("this method returns the reverse object on which it is called");
+        sb.reverse();
+        System.out.println(sb);
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                               

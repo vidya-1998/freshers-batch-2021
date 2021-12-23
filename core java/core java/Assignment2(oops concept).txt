@@ -1,0 +1,330 @@
+                                                          ASSIGNMENT-2
+-------------------------------------------------------------------------------------------------------------------
+1)//singletone class//
+
+import java.io.*;
+  
+class MySingleton
+{
+    static MySingleton instance = null;
+    public int x = 10;
+    
+           // private constructor can't be accessed outside the class
+   
+   private MySingleton() {  }
+   
+           // Factory method to provide the users with instances
+    
+   static public MySingleton getInstance()
+    {
+        if (instance == null)        
+             instance = new MySingleton();
+   
+        return instance;
+    } 
+}
+  
+            // Driver Class
+class Main
+{
+   public static void main(String args[])    
+   {
+       MySingleton a = MySingleton.getInstance();
+       MySingleton b = MySingleton.getInstance();
+       a.x = a.x + 10;
+       System.out.println("Value of a.x = " + a.x);
+       System.out.println("Value of b.x = " + b.x);
+   }    
+}
+-------------------------------------------------------------------------------
+2)//caluculating salary for an oraganisation of employee,manager and labour//
+
+
+class Employee
+{
+     String name;
+     int salary;
+     Employee()
+     {
+          name = null;
+          salary = 0;
+     }
+     Employee (String name, int salary)
+     {
+          this.name = name;
+          this.salary = salary;
+     }
+     int getSalary()
+     {
+          return salary;
+     }
+}
+
+class Manager extends Employee
+{
+     int hra, ta;
+     Manager()
+     {
+          super();
+          hra = ta = 0;
+     }
+     Manager(String n, int sal, int h, int t)
+     {
+          super(n, sal);
+          hra = h;
+          ta = t;
+     }
+     int getSalary()
+     {
+          return (super.getSalary()+hra+ta);
+     }
+}
+class Labour extends Employee
+{
+     int hra, ta;
+     Labour()
+     {
+          super();
+          hra = ta = 0;
+     }
+     Labour(String n, int sal, int h, int t,int ot)
+     {
+          super(n, sal);
+          hra = h;
+          ta = t;
+          ot=ot*100
+     }
+     int getSalary()
+     {
+          return (super.getSalary()+hra+ta+ot);
+     }
+}
+
+
+class Main
+{
+     public static void main(String[] args)
+     {
+          Manager m1 = new Manager("Nikhil",20000,500,1500);
+          System.out.println("Salary of Manager= "+m1.getSalary());
+          Labour L1 = new Labour("rithvik",20000,500,1500,8);            
+          System.out.println("Salary of Labour= "+L1.getSalary()); 
+    }
+}
+--------------------------------------------------------------------------------------------------------
+3)//bank account//
+
+
+public class BankAccount {
+    private String name;
+    protected double balance;
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void deposite(double amount) {
+     this.balance += amount;
+    }
+   
+    public boolean withdraw(double amount) {
+        if (balance > amount) {
+            balance -= amount;
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+public class CurrentAccount extends BankAccount {
+
+}
+Copy
+public class SavingsAccount extends BankAccount {
+
+}
+
+public class BankDemo {
+    public static void main(String[] args) {
+        CurrentAccount c = new CurrentAccount();
+        SavingsAccount s = new SavingsAccount();
+        c.deposite(500.00);
+        s.deposite(500.00);
+        doWithdrawal(c);    // Withdraw succeed.
+        doWithdrawal(s);    // Withdraw failed.
+    }
+
+    public static void doWithdrawal(BankAccount acc) {
+        boolean result = acc.withdraw(1000.00);
+        if (result) {
+            System.out.println("Withdraw succeed.");
+        } else {
+            System.out.println("Withdraw failed.");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
+4) //if any class of its method abstract then you must declare entire class abstract//
+
+abstract class MyClass {
+   public void display() {
+      System.out.println("This is a method of abstract class");
+   }
+}
+public class AbstractClassExample extends MyClass{
+   public static void main(String args[]) {
+      new AbstractClassExample().display();
+   }
+}
+
+----------------------------------------------------------------------------------------------------
+
+5)//mathematical shapes//
+  
+
+abstract class Shape {
+  private String name;
+
+  public Shape() {
+    this.name = "Unknown shape";
+
+  public Shape(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  // Abstract methods
+  public abstract void draw();
+
+  public abstract double getArea();
+
+  public abstract double getPerimeter();
+}
+
+    // A Rectangle Class, Which Inherits from the Shape Class
+
+class Rectangle extends Shape {
+  private double width;
+  private double height;
+
+  public Rectangle(double width, double height) {
+    
+   // Set the shape name as "Rectangle"
+    
+    super("Rectangle");
+    this.width = width;
+    this.height = height;
+  }
+
+   // Provide an implementation for inherited abstract draw() method
+  
+public void draw() {
+    System.out.println("Drawing a rectangle...");
+  }
+
+  // Provide an implementation for inherited abstract getArea() method
+  
+public double getArea() {
+    return width * height;
+  }
+
+  // Provide an implementation for inherited abstract getPerimeter() method
+  
+public double getPerimeter() {
+    return 2.0 * (width + height);
+  }
+}
+
+  // A cube Class, Which Inherits from Shape Class
+
+class Cube extends Shape {
+  private double radius;
+  private double side;
+
+  public Cube(double radius,double side) {
+    super("Cube");
+    this.radius = radius;
+    this.side   =side;
+  }
+
+    // Provide an implementation for inherited abstract draw() method
+  
+public void draw() {
+    System.out.println("Drawing a cube...");
+  }
+
+    // Provide an implementation for inherited abstract getArea() method
+  
+public double getArea() {
+    return 6.0 * radius * radius;
+  }
+
+   // Provide an implementation for inherited abstract getPerimeter() method
+  
+public double getPerimeter() {
+    return 12.0 * radius;
+  }
+}
+
+// A ShapeUtil Class That Has Utility Methods to Draw Any Shapes and Print
+// Details About Them
+
+class ShapeUtil {
+  public static void drawShapes(Shape[] list) {
+    for (int i = 0; i < list.length; i++) {
+      // Draw a shape, no matter what it is
+      list[i].draw(); // Late binding
+    }
+  }
+
+  public static void printShapeDetails(Shape[] list) {
+    for (int i = 0; i < list.length; i++) {
+      
+      // Gather details about the shape
+      
+      String name = list[i].getName(); // Late Binding
+      double area = list[i].getArea(); // Late binding
+      double perimeter = list[i].getPerimeter(); // Late binding
+
+      // Print details
+      
+      System.out.println("Name: " + name);
+      System.out.println("Area: " + area);
+      System.out.println("Perimeter: " + perimeter);
+    }
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    // Create some shapes, draw, and print their details
+    Shape[] shapeList = new Shape[2];
+    shapeList[0] = new Rectangle(2.0, 4.0); // Upcasting
+    shapeList[1] = new Cube(5.0,3.0); // Upcasting
+
+    // Draw all shapes
+    
+ShapeUtil.drawShapes(shapeList);
+
+    // Print details of all shapes
+    
+ShapeUtil.printShapeDetails(shapeList);
+  }
+}
+-------------------------------------------------------------------------------------------------------------------------
+6)
+
+ 
+  

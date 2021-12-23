@@ -1,0 +1,144 @@
+ 2.write a program to print a list of objects using hashset and in case if we add any duplicate elements it should be silently rejected
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class hashset {
+
+	@SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
+		@SuppressWarnings("unchecked")
+		HashSet<String> set=new HashSet();  
+        set.add("tiger");    
+        set.add("horse");    
+        set.add("dog");   
+        set.add("cat");  
+        set.add("Frog");  
+        set.add("peacock");
+        set.add("parrot");
+        set.add("eagle");
+        set.add("owl");
+        set.add("tiger");
+        Iterator<String> i=set.iterator();  
+        while(i.hasNext())  
+        {  
+        System.out.println(i.next());  
+        }  
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+// write a program to print the employee deatails in sorted order
+
+3.package collec;
+package collec;
+
+import java.util.TreeSet;
+
+public class treeset {
+	public static void main( String[] args )
+    {
+        TreeSet<employee> treeSet = new TreeSet<employee>();
+
+        employee john = new employee("Balu", 10, 40000);
+        employee david = new employee("Ajay", 20, 80000);
+        employee peter = new employee("Carol", 30, 150000);
+
+        System.out.println(john);
+        treeSet.add(john);
+        
+        System.out.println(david);
+        treeSet.add(david);
+        
+        System.out.println(peter);
+        treeSet.add(peter);
+        
+
+        System.out.println("treeSet : " + treeSet + "\n");
+        /*
+         * Using for each loop getting each employee object from the treeSet
+         */
+        for( employee employee : treeSet )
+        {
+            System.out.println("Employee Name : "+employee.getName());
+            System.out.println("Employee Age : "+employee.getAge());
+            System.out.println("Employee Salary :"+ employee.getSalary());
+     
+        }
+
+    }
+}
+
+public class employee {
+	private String name;
+    private int age;
+    private int salary;
+
+    public employee(String name, int age, int salary)
+    {
+        super();
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    public int getSalary()
+    {
+        return salary;
+    }
+
+    public void setSalary(int salary)
+    {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Employee [name=" + name + ", age=" + age + ", salary=" + salary
+                + "]";
+    }
+
+    /*
+     * This method has logic to arrange the employee objects in descending order
+     * based on the Name.
+     */
+    public int compareTo(Object object)
+    {
+
+        employee employee = (employee) object;
+
+        System.out.println("CompareTo method has been called to arrange the employee objects in descending order based on the Name, ");
+
+        System.out.println("this.getName()= " + this.getName()
+                + ", employee.getName()=" + employee.getName() + "\n");
+
+        return employee.getName().compareTo(this.getName());
+    }
+
+}
+
+
+
