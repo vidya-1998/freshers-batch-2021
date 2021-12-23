@@ -1,0 +1,213 @@
+svidya1@LIN33005349 MINGW64 /c/Assignments/js (master|MERGING)
+$ git branch js-assignment
+
+svidya1@LIN33005349 MINGW64 /c/Assignments/js (master|MERGING)
+$ git checkout js-assignment
+error: you need to resolve your current index first
+readme.txt: needs merge
+
+svidya1@LIN33005349 MINGW64 /c/Assignments/js (master|MERGING)
+$ git add readme.txt
+fatal: pathspec 'readme.txt' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments/js (master|MERGING)
+$ git add C:\Assignments
+
+svidya1@LIN33005349 MINGW64 /c/Assignments/js (master|MERGING)
+$ cd C:\Assignments
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git add readme.txt
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git commit -m "overrite"
+[master 9331b62] overrite
+ Committer: Vidya <s.vidya@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git branch js-assignments
+fatal: A branch named 'js-assignments' already exists.
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git checkout js-assignmets
+error: pathspec 'js-assignmets' did not match any file(s) known to git
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git status
+On branch js-assignments
+nothing to commit, working tree clean
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git add js-assignments
+fatal: pathspec 'js-assignments' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git add js-assignments.txt
+fatal: pathspec 'js-assignments.txt' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git add 'js-assignments.txt'
+fatal: pathspec 'js-assignments.txt' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git add 'js-assignments'
+fatal: pathspec 'js-assignments' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git commit
+On branch js-assignments
+nothing to commit, working tree clean
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git status
+On branch js-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git add readme.txt
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git commit -m "changes for js"
+[js-assignments b1ceee0] changes for js
+ Committer: Vidya <s.vidya@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git add readme.txt
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git commit -m "changes done for master using js"
+[master a1daf51] changes done for master using js
+ Committer: Vidya <s.vidya@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git checkout js-assignments
+Switched to branch 'js-assignments'
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git status
+On branch js-assignments
+nothing to commit, working tree clean
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git commit
+On branch js-assignments
+nothing to commit, working tree clean
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (js-assignments)
+$ git checkout master
+Switched to branch 'master'
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$ git merge js-assignments
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   readme.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   js-assignments.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git add js-assignment
+fatal: pathspec 'js-assignment' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git add js-assignment.txt
+fatal: pathspec 'js-assignment.txt' did not match any files
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git add .
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git add readme.txt
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master|MERGING)
+$ git commit -m "error"
+[master cea0272] error
+ Committer: Vidya <s.vidya@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+
+svidya1@LIN33005349 MINGW64 /c/Assignments (master)
+$
